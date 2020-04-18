@@ -1,9 +1,9 @@
 install:
-	npm ci
+	cd backend && npm ci
 	cd client && npm ci
 
 build:
-	npm run build
+	cd backend && npm run build
 	cd client && npm run build
 
 test:
