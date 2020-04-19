@@ -16,6 +16,6 @@ jobs:
       - name: Install deps
         run: |
           make install
-      - name: Run web tests
+      - name: Run front-end lint
         run: |
-          make test-ci
+          make lint-frontend

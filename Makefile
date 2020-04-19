@@ -1,15 +1,12 @@
 install:
 	cd backend && npm ci
-	cd client && npm ci
+	cd frontend && npm ci
 
 build:
 	cd backend && npm run build
-	cd client && npm run build
+	cd frontend && npm run build
 
-test:
-	cd client && npm test
-
-test-ci:
-	cd client && CI=true npm test
+lint-frontend:
+	cd frontend && npm run lint
 
 .PHONY: test

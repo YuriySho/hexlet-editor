@@ -15,6 +15,8 @@ $ make install
 ## Running the app
 
 ```bash
+$ cd backend
+
 # development
 $ npm run start
 
@@ -28,6 +30,8 @@ $ npm run start:prod
 ## Test
 
 ```bash
+$ cd backend
+
 # unit tests
 $ npm run test
 
@@ -37,3 +41,7 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+localhost:3001
+
+localhost:8081 frontend
