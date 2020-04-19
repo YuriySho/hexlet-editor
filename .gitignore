@@ -1,6 +1,6 @@
 # compiled output
 backend/dist
-client/build
+frontend/dist
 
 node_modules
 
