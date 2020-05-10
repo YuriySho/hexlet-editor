@@ -7,11 +7,9 @@ export const Editor = () => {
   const {
     code,
     onChange,
+    editorDidMount,
   } = useEditor();
 
-  const editorDidMount = (editor) => {
-    editor.focus();
-  };
 
   const options = {
     selectOnLineNumbers: true,
@@ -19,7 +17,6 @@ export const Editor = () => {
 
   return (
     <MonacoEditor
-      width="800"
       height="600"
       language="javascript"
       theme="vs-dark"
