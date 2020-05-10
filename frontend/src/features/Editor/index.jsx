@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import MonacoEditor from 'react-monaco-editor';
 
-const Editor = () => {
+export const Editor = () => {
   const [code] = useState('// happy hacking!');
 
   const onChange = (newValue, e) => {
@@ -29,5 +29,3 @@ const Editor = () => {
     />
   );
 };
-
-export default Editor;
