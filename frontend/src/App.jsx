@@ -1,5 +1,6 @@
 import React from 'react';
-import { Editor } from './features';
+import { Editor, Button } from './features';
+
 
 export const App = () => (
   <div className="d-flex flex-column min-vh-100">
@@ -10,6 +11,7 @@ export const App = () => (
       <div className="row">
         <div className="col-6">
           <Editor />
+          <Button />
         </div>
         <div className="col-6">
           output
