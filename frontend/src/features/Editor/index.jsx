@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MonacoEditor from 'react-monaco-editor';
 
-export const Editor = () => {
-  const [code] = useState('// happy hacking!');
+import { useEditor } from './hooks';
 
-  const onChange = (newValue, e) => {
-    console.log('onChange', newValue, e);
-  };
+export const Editor = () => {
+  const {
+    code,
+    onChange,
+  } = useEditor();
 
   const editorDidMount = (editor) => {
     editor.focus();
