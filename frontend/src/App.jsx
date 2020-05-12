@@ -1,9 +1,11 @@
 import React from 'react';
-import { Editor } from './features';
+import { Editor, Navbar } from './features';
 
 const App = () => (
   <>
-    <header>header</header>
+    <header>
+      <Navbar />
+    </header>
     <Editor />
     <footer>footer</footer>
   </>
