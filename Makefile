@@ -9,6 +9,6 @@ build:
 	cd frontend && npm run build
 
 lint-frontend:
-	cd frontend && npm run lint
+	npm run eslint src/
 
 .PHONY: test
