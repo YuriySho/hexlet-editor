@@ -1,8 +1,8 @@
 import hmr from 'fastify-webpack-hmr';
 import webpack from 'webpack';
 
-import Application from '../Application';
-import webpackConfig from '../../webpack.config';
+import Application from '../Application.js';
+import webpackConfig from '../../webpack.config.js';
 
 const compiler = webpack(webpackConfig);
 
