@@ -1,7 +1,7 @@
 import React from 'react';
 import MonacoEditor from 'react-monaco-editor';
 
-import { useEditor } from './hooks';
+import { useEditor } from './hooks.js';
 
 export const Editor = () => {
   const {
