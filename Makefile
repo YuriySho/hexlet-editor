@@ -8,7 +8,7 @@ build:
 	cd backend && npm run build
 	cd frontend && npm run build
 
-lint-frontend:
-	npx eslint src/
+lint:
+	npx eslint .
 
 .PHONY: test

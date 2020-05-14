@@ -7,7 +7,7 @@ module.exports = {
         },
       },
     ],
-    "@babel/preset-react"
+    '@babel/preset-react',
   ],
   // plugins: [
   //   ['@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' }],
