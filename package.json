@@ -4,9 +4,7 @@
   "description": "",
   "author": "",
   "license": "MIT",
-  "scripts": {
-    "eslint": "eslint"
-  },
+  "scripts": {},
   "dependencies": {
     "@babel/preset-react": "^7.9.4",
     "@nodosjs/application": "0.0.30",
