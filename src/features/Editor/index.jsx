@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MonacoEditor from 'react-monaco-editor';
 
-const Editor = () => {
-  const [code] = useState('// happy hacking!');
+import { useEditor } from './hooks.js';
 
-  const onChange = (newValue, e) => {
-    console.log('onChange', newValue, e);
-  };
+export const Editor = () => {
+  const {
+    code,
+    onChange,
+    editorDidMount,
+  } = useEditor();
 
-  const editorDidMount = (editor) => {
-    editor.focus();
-  };
 
   const options = {
     selectOnLineNumbers: true,
@@ -18,7 +17,6 @@ const Editor = () => {
 
   return (
     <MonacoEditor
-      width="800"
       height="600"
       language="javascript"
       theme="vs-dark"
@@ -29,5 +27,3 @@ const Editor = () => {
     />
   );
 };
-
-export default Editor;

@@ -45,3 +45,29 @@ $ npm run test:cov
 localhost:3001
 
 localhost:8081 frontend
+
+
+## Frontend
+
+```bash
+$ cd frontend
+
+# install
+$ make install
+
+# develop
+$ make develop
+
+# build
+$ make build
+```
+
+## Как помочь
+
+Посмотреть список issues, выбрать интересную задачу, отписаться в issue о желании поработать над задачей.
+
+Общение - в канале `#hexlet-volunteers`
+
+## Known issues
+
+При работе с фронтендом в редакторе VS Code открываем не всю папку с проектом, а только frontend, поскольку расширение редактора eslint будет искать свои плагины в корне проекта.
