@@ -1,14 +1,16 @@
 install:
-	npm ci
+	npm install
 
 start:
-	npx babel-node bin/nodos server -h 0.0.0.0
+	npx nodos server -p 5000
 
 build:
-	cd backend && npm run build
-	cd frontend && npm run build
+	npm run build
 
 lint:
 	npx eslint .
+
+test:
+	npm test
 
 .PHONY: test
