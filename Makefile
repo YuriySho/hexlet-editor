@@ -13,5 +13,8 @@ lint:
 test:
 	npm test
 
-deploy:
+heroku-deploy:
 	git push heroku
+
+heroku-logs:
+	heroku logs

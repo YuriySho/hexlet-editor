@@ -5,13 +5,14 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "test": "jest --colors"
+    "test": "jest --colors",
+    "start": "npx nodos server -h 0.0.0.0"
   },
   "dependencies": {
     "@babel/preset-react": "^7.9.4",
-    "@nodosjs/core": "0.0.33",
-    "@nodosjs/jest-environment": "0.0.33",
-    "@nodosjs/db-extension": "0.0.33",
+    "@nodosjs/core": "0.0.34",
+    "@nodosjs/jest-environment": "0.0.34",
+    "@nodosjs/db-extension": "0.0.34",
     "@reduxjs/toolkit": "^1.3.6",
     "monaco-editor": "^0.20.0",
     "fastify-webpack-hmr": "^2.2.0",
