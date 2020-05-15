@@ -1,5 +1,5 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // const HtmlWebPackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 // const CopyPlugin = require('copy-webpack-plugin');
@@ -43,8 +43,8 @@ module.exports = {
         ],
       }, {
         test: /\.ttf$/,
-        use: ['file-loader']
-      }
+        use: ['file-loader'],
+      },
     ],
   },
   plugins: [

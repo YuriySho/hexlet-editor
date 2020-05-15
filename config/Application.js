@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+
 import nodosDbExtension from '@nodosjs/db-extension';
 
 export default (app) => {
@@ -11,4 +13,4 @@ export default (app) => {
       `${__dirname}/../app/entities/*.js`,
     ],
   };
-}
+};

@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+
 import hmr from 'fastify-webpack-hmr';
 import webpack from 'webpack';
 
