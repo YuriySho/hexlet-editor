@@ -17,7 +17,7 @@ module.exports = {
     './app/javascript/application.js',
   ],
   output: {
-    publicPath: '/assets',
+    publicPath: '/assets/',
     path: path.resolve(__dirname, 'public/assets'),
   },
   devtool: isProd ? false : 'eval-source-map',
