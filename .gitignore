@@ -1,8 +1,6 @@
 # compiled output
-backend/dist
-frontend/dist
-
 node_modules
+public/assets
 
 # Logs
 logs

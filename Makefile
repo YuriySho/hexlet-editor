@@ -2,7 +2,7 @@ install:
 	npm install
 
 start:
-	npx nodos server -p 5000
+	npx nodos server
 
 build:
 	npm run build

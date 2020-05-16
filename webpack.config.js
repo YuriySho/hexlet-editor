@@ -12,15 +12,15 @@ const isProd = env === 'production';
 
 module.exports = {
   mode: env,
-  devtool: isProd ? false : 'eval-source-map',
   entry: [
-    `${__dirname}/src/index.jsx`,
+    './app/assets/stylesheets/application.scss',
+    './app/javascript/application.js',
   ],
   output: {
-    // filename: '[name].[contenthash].js',
-    publicPath: '/assets/',
-    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/assets',
+    path: path.resolve(__dirname, 'public/assets'),
   },
+  devtool: isProd ? false : 'eval-source-map',
   resolve: {
     extensions: ['.js', '.jsx'],
   },
@@ -34,14 +34,21 @@ module.exports = {
         },
       },
       {
+        test: /\.s[ac]ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+      {
         test: /\.css$/,
         use: [
           { loader: MiniCssExtractPlugin.loader },
           { loader: 'css-loader' },
-          // FIXME add postcss
-          // FIXME add scss
         ],
-      }, {
+      },
+      {
         test: /\.ttf$/,
         use: ['file-loader'],
       },
