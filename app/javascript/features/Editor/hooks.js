@@ -9,7 +9,10 @@ export const useEditor = () => {
     dispatch(updateCode(code));
   };
 
-  const code = useSelector((state) => state.editor.code);
+  const { code, language } = useSelector((state) => ({
+    code: state.editor.code,
+    language: state.editor.language,
+  }));
 
   const onMount = (editor) => {
     window.addEventListener('resize', () => {
@@ -22,6 +25,7 @@ export const useEditor = () => {
 
   return {
     code,
+    language,
     onChange,
     editorDidMount: onMount,
   };

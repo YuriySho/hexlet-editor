@@ -1,8 +1,12 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import editorReducer from '../features/Editor/editorSlice.js';
+import editorReducer, { changeLanguage } from '../features/Editor/editorSlice.js';
 
 
 export const rootReducer = combineReducers({
   editor: editorReducer,
 });
+
+export const setupState = (gon) => (dispatch) => {
+  dispatch(changeLanguage(gon.language));
+};
