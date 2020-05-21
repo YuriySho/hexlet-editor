@@ -8,9 +8,6 @@ env:
   node: true
   jest: true
 
-globals:
-  gon: true
-
 settings:
   import/resolver:
     - node

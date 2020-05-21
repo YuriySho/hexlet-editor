@@ -25,4 +25,4 @@ scopes:
     pipeline: browser
     root: true
     routes:
-      - resources: editor
+      - resources: snippets
