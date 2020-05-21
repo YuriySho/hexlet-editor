@@ -1,5 +1,15 @@
 /* eslint-disable no-param-reassign */
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+
+export const runCode = createAsyncThunk(
+  'terminal/runCode',
+  async () => {
+    const fakeResponse = 'Code has been running successful!';
+    await new Promise((resolve) => {
+      setTimeout(() => resolve(fakeResponse), 1000);
+    });
+  },
+);
 
 const slice = createSlice({
   name: 'terminal',
@@ -7,20 +17,12 @@ const slice = createSlice({
     stateOfRuningCode: null,
   },
   reducers: {
-    runCodeSuccess(state, { payload }) {
+  },
+  extraReducers: {
+    [runCode.fulfilled]: (state, { payload }) => {
       state.stateOfRuningCode = payload;
     },
   },
 });
-
-export const useRunCode = () => {
-  const fakeResponse = 'Code has been running successful!';
-  const runCode = () => new Promise((resolve) => {
-    setTimeout(() => resolve(dispatch(runCodeSuccess(fakeResponse))), 1000);
-  });
-
-  return { runCode };
-};
-
 
 export default slice.reducer;
