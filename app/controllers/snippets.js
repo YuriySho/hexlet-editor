@@ -1,5 +1,4 @@
-import faker from 'faker';
-import Editor from '../entities/Editor';
+import Snippet from '../entities/Snippet.js';
 
 export const build = async (request, response) => {
   const languages = ['javascript', 'php', 'python'];
@@ -8,8 +7,8 @@ export const build = async (request, response) => {
 
 export const show = async (request, response, { db }) => {
   const editor = await db.connection
-    .getRepository(Editor)
-    .findOne({ name: request.params.id });
+    .getRepository(Snippet)
+    .findOne({ id: request.params.id });
   if (!editor) {
     response.head(404);
     return;
@@ -18,16 +17,12 @@ export const show = async (request, response, { db }) => {
   response.render({ gon: { language: editor.language } });
 };
 
-
 export const create = async (request, response, { router, db }) => {
-  const editor = new Editor({ ...request.body.editor, name: faker.random.uuid() });
-  if (editor instanceof Object) {
+  const snippet = new Snippet(request.body.snippet);
+  if (snippet instanceof Object) {
     await db.connection
       .manager
-      .save(editor);
-    response.redirectTo(router.routePath('editor', editor.name));
-    return;
+      .save(snippet);
+    response.redirectTo(router.routePath('snippet', snippet.id));
   }
-
-  response.render();
 };
