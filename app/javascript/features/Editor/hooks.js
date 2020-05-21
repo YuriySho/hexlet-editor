@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { updateCode } from './editorSlice.js';
+import { updateCode } from '../../slices/editor.js';
 
 export const useEditor = () => {
   const dispatch = useDispatch();

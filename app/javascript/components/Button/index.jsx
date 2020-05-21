@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRunCode } from '../../features/Editor/editorSlice';
+import { useRunCode } from '../../slices/editor';
 
 
 export const Button = () => {

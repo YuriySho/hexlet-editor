@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
-import { rootReducer } from './reducers';
+import reducer from './slices';
 import { App } from './App.jsx';
 
 export default () => {
   const store = configureStore({
-    reducer: rootReducer,
+    reducer,
   });
 
   ReactDOM.render(
