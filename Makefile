@@ -1,12 +1,20 @@
 install:
-	cd backend && npm ci
-	cd frontend && npm ci
+	npm install
+
+start:
+	npx nodos server
 
 build:
-	cd backend && npm run build
-	cd frontend && npm run build
+	npm run build
 
-lint-frontend:
-	cd frontend && npm run lint
+lint:
+	npx eslint .
 
-.PHONY: test
+test:
+	npm test
+
+heroku-deploy:
+	git push heroku
+
+heroku-logs:
+	heroku logs
