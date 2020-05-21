@@ -1,6 +1,6 @@
 import React from 'react';
-import { Editor, Button } from './features';
-
+import { Editor } from './features';
+import { Button } from './components/Button';
 
 export const App = () => (
   <div>

@@ -8,7 +8,6 @@ const slice = createSlice({
     error: false,
     isFetching: false,
     code: '// happy hacking!',
-    stateOfRuningCode: null,
   },
   reducers: {
     updateCode(state, { payload }) {
