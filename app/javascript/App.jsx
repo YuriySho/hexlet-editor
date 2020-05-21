@@ -1,5 +1,5 @@
 import React from 'react';
-import { Editor } from './features';
+import { Editor } from './components';
 
 export const App = () => (
   <div>

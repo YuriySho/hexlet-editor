@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { updateCode } from './editorSlice.js';
+import { actions } from '../../slices';
 
 export const useEditor = () => {
   const dispatch = useDispatch();
 
   const onChange = (code) => {
-    dispatch(updateCode(code));
+    dispatch(actions.updateCode(code));
   };
 
   const { code, language } = useSelector((state) => ({

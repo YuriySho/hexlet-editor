@@ -4,7 +4,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import gon from 'gon';
 
-import { rootReducer, setupState } from './reducers';
+import { rootReducer, setupState } from './slices';
 import { App } from './App.jsx';
 
 export default () => {

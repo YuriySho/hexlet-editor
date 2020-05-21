@@ -19,9 +19,7 @@ const slice = createSlice({
   },
 });
 
-export const {
-  updateCode,
-  changeLanguage,
-} = slice.actions;
+const actions = { ...slice.actions };
+export { actions };
 
 export default slice.reducer;
