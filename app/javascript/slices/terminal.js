@@ -4,10 +4,11 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const runCode = createAsyncThunk(
   'terminal/runCode',
   async () => {
-    const fakeResponse = 'Code has been running successful!';
-    await new Promise((resolve) => {
-      setTimeout(() => resolve(fakeResponse), 1000);
+    const fakeRunCode = () => 'Code has been running successful!';
+    const response = await new Promise((resolve) => {
+      setTimeout(() => resolve(fakeRunCode()), 1000);
     });
+    return response;
   },
 );
 

@@ -1,7 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
 import editor, { actions as editorActions } from './editor.js';
-import terminal from './terminal.js';
+import terminal, { runCode } from './terminal.js';
 
 
 export default combineReducers({
@@ -9,6 +9,12 @@ export default combineReducers({
   terminal,
 });
 
-export const actions = {
+const asyncActions = {
+  runCode,
+};
+
+const actions = {
   ...editorActions,
 };
+
+export { actions, asyncActions };

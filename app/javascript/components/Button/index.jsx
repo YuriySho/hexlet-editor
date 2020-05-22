@@ -1,15 +1,16 @@
 import React from 'react';
-import { useRunCode } from '../../slices/editor';
+import { useDispatch } from 'react-redux';
+import { asyncActions } from '../../slices/index.js';
 
+const { runCode } = asyncActions;
 
 export const Button = () => {
-  const { runCode } = useRunCode();
-
+  const dispatch = useDispatch();
   return (
     <button
       type="button"
       className="btn btn-primary"
-      onClick={runCode}
+      onClick={() => dispatch(runCode())}
     >
       Run
     </button>
