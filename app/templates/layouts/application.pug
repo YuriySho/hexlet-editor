@@ -31,12 +31,25 @@ html
 
     block content
     block foot
-      #footer
-        p some footer content
+      footer.mt-auto.pb-5.bg-light
+        .container-xl
+          .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.pt-3
+            .col.d-flex.flex-column.mb-2
+              h3.h3.pb-2.border-bottom © Hexlet
+              a.text-secondary(href="pages/about") О проекте
+              a.text-secondary(href="https://github.com/Hexlet/hexlet-editor" target="_blank" rel="noopener noreferrer") Исходный код
+              a.text-secondary(href="http://slack-ru.hexlet.io/" target="_blank" rel="noopener noreferrer") Slack #hexlet-volunteers
+            .col.d-flex.flex-column.mb-2
+              h3.h3 Помощь
+              a.text-secondary(href="https://ru.hexlet.io/knowledge" target="_blank" rel="noopener noreferrer") База знаний
+              a.text-secondary(href="https://guides.hexlet.io" target="_blank" rel="noopener noreferrer") Hexlet Guides
+            .col.d-flex.flex-column.mb-2
+              h3.h3 Дополнительно
+              a.text-secondary(href="https://ru.code-basics.com" target="_blank" rel="noopener noreferrer") Code Basics
+              a.text-secondary(href="https://codebattle.hexlet.io" target="_blank" rel="noopener noreferrer") Code Battles
 
     script(src='/assets/main.js')
 
     script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous")
     script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous")
-
