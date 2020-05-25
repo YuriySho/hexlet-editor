@@ -26,6 +26,10 @@ module.exports = {
   },
   externals: {
     gon: 'gon',
+    net: 'net',
+    fs: 'fs',
+    tls: 'tls',
+    child_process: 'child_process',
   },
   module: {
     rules: [
@@ -54,6 +58,10 @@ module.exports = {
       {
         test: /\.ttf$/,
         use: ['file-loader'],
+      },
+      {
+        test: /\.node$/,
+        use: 'node-loader',
       },
     ],
   },
