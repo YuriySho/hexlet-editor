@@ -30,6 +30,9 @@ module.exports = {
     fs: 'fs',
     tls: 'tls',
     child_process: 'child_process',
+    'node-pty': 'node-pty',
+    express: 'express',
+    'express-ws': 'express-ws',
   },
   module: {
     rules: [
@@ -60,8 +63,10 @@ module.exports = {
         use: ['file-loader'],
       },
       {
-        test: /\.node$/,
-        use: 'node-loader',
+        test: /\.js\.map$/,
+        use: {
+          loader: 'file-loader',
+        },
       },
     ],
   },
