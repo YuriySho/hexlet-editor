@@ -6,6 +6,7 @@ import { useEditor } from './hooks.js';
 export const Editor = () => {
   const {
     code,
+    language,
     onChange,
     editorDidMount,
   } = useEditor();
@@ -18,7 +19,7 @@ export const Editor = () => {
   return (
     <MonacoEditor
       height="600"
-      language="javascript"
+      language={language}
       theme="vs-dark"
       value={code}
       options={options}

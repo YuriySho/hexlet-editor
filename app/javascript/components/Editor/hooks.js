@@ -1,17 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
-
-import { actions } from '../../slices/index.js';
-
-const { updateCode } = actions;
+import { actions } from '../../slices';
 
 export const useEditor = () => {
   const dispatch = useDispatch();
 
   const onChange = (code) => {
-    dispatch(updateCode(code));
+    dispatch(actions.updateCode(code));
   };
 
-  const code = useSelector((state) => state.editor.code);
+  const { code, language } = useSelector((state) => ({
+    code: state.editor.code,
+    language: state.editor.language,
+  }));
 
   const onMount = (editor) => {
     window.addEventListener('resize', () => {
@@ -24,6 +24,7 @@ export const useEditor = () => {
 
   return {
     code,
+    language,
     onChange,
     editorDidMount: onMount,
   };

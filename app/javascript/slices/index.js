@@ -1,20 +1,23 @@
 import { combineReducers } from '@reduxjs/toolkit';
-
-import editor, { actions as editorActions } from './editor.js';
+import editorReducer, { actions as editorActions } from './editorSlice.js';
 import terminal, { runCode } from './terminal.js';
 
 
-export default combineReducers({
-  editor,
+export const rootReducer = combineReducers({
+  editor: editorReducer,
   terminal,
 });
 
-const asyncActions = {
-  runCode,
+export const setupState = (gon) => (dispatch) => {
+  dispatch(editorActions.changeLanguage(gon.language));
 };
 
 const actions = {
   ...editorActions,
+};
+
+const asyncActions = {
+  runCode,
 };
 
 export { actions, asyncActions };

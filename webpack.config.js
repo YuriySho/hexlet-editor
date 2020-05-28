@@ -24,6 +24,16 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  externals: {
+    gon: 'gon',
+    net: 'net',
+    fs: 'fs',
+    tls: 'tls',
+    child_process: 'child_process',
+    'node-pty': 'node-pty',
+    express: 'express',
+    'express-ws': 'express-ws',
+  },
   module: {
     rules: [
       {
@@ -52,6 +62,12 @@ module.exports = {
         test: /\.ttf$/,
         use: ['file-loader'],
       },
+      {
+        test: /\.js\.map$/,
+        use: {
+          loader: 'file-loader',
+        },
+      },
     ],
   },
   plugins: [
@@ -69,7 +85,7 @@ module.exports = {
     //   { from: './public/logo192.png', to: './logo192.png' },
     // ]),
     new MonacoWebpackPlugin({
-      languages: ['javascript'],
+      languages: ['javascript', 'php', 'python'],
     }),
   ],
   optimization: {

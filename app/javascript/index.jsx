@@ -2,14 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
+import gon from 'gon';
 
-import reducer from './slices';
+import { rootReducer, setupState } from './slices';
 import { App } from './App.jsx';
 
 export default () => {
   const store = configureStore({
-    reducer,
+    reducer: rootReducer,
   });
+
+  store.dispatch(setupState(gon));
 
   ReactDOM.render(
     <Provider store={store}>
