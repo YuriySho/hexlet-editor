@@ -15,16 +15,22 @@
     "@nodosjs/db-extension": "0.0.36",
     "@nodosjs/jest-environment": "0.0.36",
     "@reduxjs/toolkit": "^1.3.6",
+    "express": "^4.17.1",
+    "express-ws": "^4.0.0",
     "faker": "^4.1.0",
     "fastify-webpack-hmr": "^2.2.0",
     "monaco-editor": "^0.20.0",
+    "node-pty": "^0.9.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-monaco-editor": "^0.36.0",
     "react-redux": "^7.2.0",
+    "react-xterm": "^2.0.4",
     "sql.js": "^1.2.2",
     "typeorm": "^0.2.25",
-    "webpack": "^4.43.0"
+    "webpack": "^4.43.0",
+    "xterm": "^4.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",

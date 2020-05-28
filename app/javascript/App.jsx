@@ -1,5 +1,5 @@
 import React from 'react';
-import { Editor } from './components';
+import { Editor, Terminal } from './components';
 
 export const App = () => (
   <main className="container-fluid my-5">
@@ -8,7 +8,7 @@ export const App = () => (
         <Editor />
       </div>
       <div className="col-6">
-        output
+        <Terminal />
       </div>
     </div>
   </main>

@@ -26,6 +26,13 @@ module.exports = {
   },
   externals: {
     gon: 'gon',
+    net: 'net',
+    fs: 'fs',
+    tls: 'tls',
+    child_process: 'child_process',
+    'node-pty': 'node-pty',
+    express: 'express',
+    'express-ws': 'express-ws',
   },
   module: {
     rules: [
@@ -54,6 +61,12 @@ module.exports = {
       {
         test: /\.ttf$/,
         use: ['file-loader'],
+      },
+      {
+        test: /\.js\.map$/,
+        use: {
+          loader: 'file-loader',
+        },
       },
     ],
   },
