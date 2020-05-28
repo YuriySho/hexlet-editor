@@ -1,11 +1,11 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import editorReducer, { actions as editorActions } from './editorSlice.js';
-import terminal, { runCode } from './terminal.js';
+import terminalReducer, { actions as terminalActions, runCode } from './terminalSlice.js';
 
 
 export const rootReducer = combineReducers({
   editor: editorReducer,
-  terminal,
+  terminal: terminalReducer,
 });
 
 export const setupState = (gon) => (dispatch) => {
@@ -14,6 +14,7 @@ export const setupState = (gon) => (dispatch) => {
 
 const actions = {
   ...editorActions,
+  ...terminalActions,
 };
 
 const asyncActions = {
