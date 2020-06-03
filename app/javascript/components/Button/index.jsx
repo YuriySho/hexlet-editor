@@ -1,18 +1,17 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { asyncActions } from '../../slices/index.js';
+import React, { memo } from 'react';
+import { useButton } from './hooks';
 
-const { runCode } = asyncActions;
+export const Button = memo(() => {
+  const { onClick, disabled } = useButton();
 
-export const Button = () => {
-  const dispatch = useDispatch();
   return (
     <button
       type="button"
       className="btn btn-primary"
-      onClick={() => dispatch(runCode())}
+      disabled={disabled}
+      onClick={onClick}
     >
       Run
     </button>
   );
-};
+});

@@ -12,13 +12,8 @@ export const setupState = (gon) => (dispatch) => {
   dispatch(editorActions.changeLanguage(gon.language));
 };
 
-const actions = {
+export const actions = {
   ...editorActions,
   ...terminalActions,
-};
-
-const asyncActions = {
   runCode,
 };
-
-export { actions, asyncActions };
