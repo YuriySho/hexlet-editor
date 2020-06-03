@@ -7,7 +7,7 @@ const slice = createSlice({
     error: false,
     isFetching: false,
     language: 'javascript',
-    code: '// happy hacking!',
+    code: '// happy hacking!\n',
   },
   reducers: {
     updateCode(state, { payload }) {
@@ -19,7 +19,6 @@ const slice = createSlice({
   },
 });
 
-const actions = { ...slice.actions };
-export { actions };
+export const { actions } = slice;
 
 export default slice.reducer;

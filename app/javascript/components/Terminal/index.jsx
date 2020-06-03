@@ -1,7 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useRef } from 'react';
 import XTerm from 'react-xterm';
 import 'xterm/css/xterm.css';
+
+import { useTerminal } from './hooks';
 
 const runTerminal = (xterm, output) => {
   const term = xterm.getTerminal();
@@ -12,17 +13,14 @@ const runTerminal = (xterm, output) => {
 
 const DEFAULT_TERMINAL_ADDONS = ['fit'];
 
-export const Terminal = ({ output = '' }) => {
-  const xTermRef = React.useRef();
+export const Terminal = () => {
+  const xTermRef = useRef(null);
+  const { output } = useTerminal();
 
-  React.useEffect(() => {
+  useEffect(() => {
     runTerminal(xTermRef.current, output);
-    return () => xTermRef.current?.componentWillUnmount();
-  }, []);
+    // return () => xTermRef.current?.componentWillUnmount();
+  }, [output]);
 
   return <XTerm ref={xTermRef} addons={DEFAULT_TERMINAL_ADDONS} />;
-};
-
-Terminal.propTypes = {
-  output: PropTypes.string.isRequired,
 };

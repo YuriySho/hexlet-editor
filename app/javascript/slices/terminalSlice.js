@@ -3,10 +3,19 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const runCode = createAsyncThunk(
   'terminal/runCode',
-  async () => {
-    const fakeRunCode = () => 'Code has been running successful!';
+  async (code) => {
     const response = await new Promise((resolve) => {
-      setTimeout(() => resolve(fakeRunCode()), 1000);
+      setTimeout(() => {
+        let result;
+
+        try {
+          result = eval(code);
+        } catch (err) {
+          result = err.toString();
+        }
+
+        resolve(result);
+      }, 1000);
     });
     return response;
   },
@@ -15,18 +24,26 @@ export const runCode = createAsyncThunk(
 const slice = createSlice({
   name: 'terminal',
   initialState: {
-    stateOfRuningCode: null,
+    codeExecutionState: 'idle',
+    output: '',
   },
   reducers: {
   },
   extraReducers: {
+    [runCode.pending]: (state) => {
+      state.codeExecutionState = 'executing';
+    },
     [runCode.fulfilled]: (state, { payload }) => {
-      state.stateOfRuningCode = payload;
+      state.codeExecutionState = 'idle';
+      state.output = payload;
+    },
+    [runCode.rejected]: (state, { payload }) => {
+      state.output = payload;
+      state.codeExecutionState = 'idle';
     },
   },
 });
 
-const actions = { ...slice.actions };
-export { actions };
+export const { actions } = slice;
 
 export default slice.reducer;
