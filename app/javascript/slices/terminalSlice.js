@@ -9,6 +9,7 @@ export const runCode = createAsyncThunk(
         let result;
 
         try {
+          // eslint-disable-next-line no-eval
           result = eval(code);
         } catch (err) {
           result = err.toString();
