@@ -20,6 +20,15 @@ export const runCode = createAsyncThunk(
     });
     return response;
   },
+  {
+    condition: (code, { getState }) => {
+      const { terminal: { codeExecutionState } } = getState();
+      if (codeExecutionState === 'executing') {
+        return false;
+      }
+      return true;
+    },
+  },
 );
 
 const slice = createSlice({

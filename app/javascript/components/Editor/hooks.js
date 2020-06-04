@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { actions } from '../../slices';
 
+const { runCode } = actions;
 export const useEditor = () => {
   const dispatch = useDispatch();
 
@@ -8,19 +9,23 @@ export const useEditor = () => {
     dispatch(actions.updateCode(code));
   };
 
-  const { code, language } = useSelector((state) => ({
-    code: state.editor.code,
-    language: state.editor.language,
-  }));
-
-  const onMount = (editor) => {
+  const onMount = (editor, monaco) => {
     window.addEventListener('resize', () => {
       if (editor) {
         editor.layout();
       }
     });
     editor.focus();
+    // eslint-disable-next-line no-bitwise
+    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+      const code = editor.getValue();
+      dispatch(runCode(code));
+    });
   };
+  const { code, language } = useSelector((state) => ({
+    code: state.editor.code,
+    language: state.editor.language,
+  }));
 
   return {
     code,
