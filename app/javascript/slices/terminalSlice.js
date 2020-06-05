@@ -23,10 +23,7 @@ export const runCode = createAsyncThunk(
   {
     condition: (code, { getState }) => {
       const { terminal: { codeExecutionState } } = getState();
-      if (codeExecutionState === 'executing') {
-        return false;
-      }
-      return true;
+      return codeExecutionState !== 'executing';
     },
   },
 );
