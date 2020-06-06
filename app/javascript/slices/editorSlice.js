@@ -6,17 +6,19 @@ const slice = createSlice({
   initialState: {
     error: false,
     isFetching: false,
-    code: '// happy hacking!',
+    language: 'javascript',
+    code: '// happy hacking!\n',
   },
   reducers: {
     updateCode(state, { payload }) {
       state.code = payload;
     },
+    changeLanguage(state, { payload }) {
+      state.language = payload;
+    },
   },
 });
 
-export const {
-  updateCode,
-} = slice.actions;
+export const { actions } = slice;
 
 export default slice.reducer;
